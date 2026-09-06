@@ -1,4 +1,6 @@
+# 这个函数负责计算商品利润和利润率
 def calculate_profit(selling_price, purchase_cost, shipping_cost, platform_fee):
+#    print("正在调用利润计算函数……")
     profit = selling_price - purchase_cost - shipping_cost - platform_fee
     profit_margin = profit / selling_price * 100
     return profit, profit_margin
@@ -8,7 +10,7 @@ print("跨境商品利润计算器")
 print("--------------------")
 
 try:
-    selling_price = float(input("请输入商品售价："))
+    selling_price = float(input("请输入商品售价（元）："))
     purchase_cost = float(input("请输入采购成本："))
     shipping_cost = float(input("请输入运费："))
     platform_fee = float(input("请输入平台费用："))
@@ -35,4 +37,4 @@ try:
             print("分析结果：商品可能亏损。")
 
 except ValueError:
-    print("输入错误：请输入数字，例如 100 或 99.5。")
+    print("输入错误：请输入有效数字，不能输入文字。")
